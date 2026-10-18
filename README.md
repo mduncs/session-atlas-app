@@ -28,24 +28,6 @@ It never writes to a source transcript. The index is a rebuildable cache;
 favorites, summaries, tags and job records survive every rebuild, and favorites
 keep their materialized verbatim text.
 
-## Default interface and experimental library
-
-The original **Ink dashboard is the default** (`atlas`, `atlas tui`). The
-OpenTUI replacement is experimental and available only through `atlas library ui`.
-The migrated archive, capture/search backend, MCP tools and saved data remain
-intact and accessible through `atlas library ...`.
-
-Ink reads its original configured index. If migration has protected that index,
-it opens read-only and identifies the pre-migration view; it does not silently
-write through the migration fence or pretend to show the new library schema.
-
-See [Atlas library setup and evidence](docs/ATLAS-LIBRARY.md).
-
-For a separate, colored comparison of the compact dashboard, run `atlas-test`
-in another terminal. Cyan marks redesigned controls and labels; ordinary
-`atlas` stays unchanged. The comparison reads the same index without indexing,
-generating summaries, or changing saved data. See [comparison controls](docs/atlas-test.md).
-
 ## Status
 
 Heavy work in progress. The indexer, TUI, search, favorites, summaries, tags,
@@ -170,6 +152,24 @@ merge history, and jobs are carried over by stable session identity. Interactive
 use requires confirmation; automation additionally requires `--yes`. In this
 version `--hard` preserves the same data and differs only in its confirmation
 word.
+
+## Default interface and experimental library
+
+The original **Ink dashboard is the default** (`atlas`, `atlas tui`). The
+OpenTUI replacement is experimental and available only through `atlas library ui`.
+The migrated archive, capture/search backend, MCP tools and saved data remain
+intact and accessible through `atlas library ...`.
+
+Ink reads its original configured index. If migration has protected that index,
+it opens read-only and identifies the pre-migration view; it does not silently
+write through the migration fence or pretend to show the new library schema.
+
+See [Atlas library setup and evidence](docs/ATLAS-LIBRARY.md).
+
+For a separate, colored comparison of the compact dashboard, run `atlas-test`
+in another terminal. Cyan marks redesigned controls and labels; ordinary
+`atlas` stays unchanged. The comparison reads the same index without indexing,
+generating summaries, or changing saved data. See [comparison controls](docs/atlas-test.md).
 
 ## Configuration
 
